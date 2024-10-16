@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="admin-container">
+    <h1>Admin Dashboard</h1>
+
+    <div class="admin-section">
+      <h2>Edit User Information</h2>
+      <label for="username">Name:</label>
+      <input type="text" id="username" placeholder="Enter user name">
+      <br>
+      <label for="email">Display Count:</label>
+      <input type="email" id="email" placeholder="Enter user email">
+      <br><br>
+      <button onclick="updateUserInfo()">Save Changes</button>
+    </div>
+  </div>
+
+  <script>
+    // Load saved data to pre-fill fields if available
+    window.onload = function() {
+      if (localStorage.getItem('userName')) {
+        document.getElementById('username').value = localStorage.getItem('userName');
+      }
+      if (localStorage.getItem('userEmail')) {
+        document.getElementById('email').value = localStorage.getItem('userEmail');
+      }
+    };
+
+    function updateUserInfo() {
+      const name = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+
+      // Save the data to Local Storage
+      localStorage.setItem('userName', name);
+      localStorage.setItem('userEmail', email);
+
+      alert('User information updated!');
+    }
+  </script>
+</body>
+</html>

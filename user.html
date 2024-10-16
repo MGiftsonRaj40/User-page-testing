@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="user-container">
+    <h1>Welcome, <span id="displayName">User</span>!</h1>
+
+    <div class="user-section">
+      <h2>Profile Information</h2>
+      <p>Name: <spaan id="profileName">Fine Fabrics</span></p>
+      <p>Sales Count: <span id="profileEmail">100</span></p>
+    </div>
+
+    <div class="user-section">
+      <h2>Actions</h2>
+      <button onclick="viewProfile()">View Profile</button>
+      <button onclick="updateProfile()">Update Profile</button>
+    </div>
+  </div>
+
+  <script>
+    // Load the user data from Local Storage when the page loads
+    window.onload = function() {
+      const name = localStorage.getItem('userName') || 'User';
+      const email = localStorage.getItem('userEmail') || '100';
+
+      document.getElementById('displayName').innerText = name;
+      document.getElementById('profileName').innerText = name;
+      document.getElementById('profileEmail').innerText = email;
+    };
+
+    function viewProfile() {
+      alert('Displaying profile information...');
+      // Additional logic to view the user's profile
+    }
+
+    function updateProfile() {
+      alert('Redirecting to profile update...');
+      // Additional logic to update the user's profile
+    }
+  </script>
+</body>
+</html>
